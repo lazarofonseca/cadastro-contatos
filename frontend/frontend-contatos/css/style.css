@@ -1,4 +1,48 @@
 
+*{
+    margin: 0;
+}
+
+img.normal { 
+    float: left; 
+    height: 300px; 
+    width: 300px; 
+}
+img.alta { 
+    float: left; 
+    height: 420px; 
+    width: 300px; 
+}
+img.exerc { 
+    float: left; 
+    height: 260px; 
+    width: 260px; 
+}
+
+h1 {
+    border-bottom-style: inset;
+}
+
+.botao-editar {
+    float: left;
+    width: 60px;
+    margin-bottom: 5px;
+    background: #472cf3;
+    color: white;
+}
+
+.botao-deletar {
+    float: left;
+    width: 60px;
+    margin-bottom: 5px;
+    background: #c00e05;
+    color: white;
+}
+
+input {
+    width: 350px;
+}
+
 .cabecalho {
     width: 100%;
     height: 100px;
@@ -17,6 +61,7 @@ a {
     text-decoration: none;
     color: white;
     padding: 10px;
+    margin-left: 150px;
 }
 
 a:hover {
@@ -44,3 +89,10 @@ table {
     justify-content: center;
     align-items: center;
   }
+
+  .rodape {
+    width: 100%;
+    height: 100px;
+    background: #CCC;
+    margin-top: 25px;
+}

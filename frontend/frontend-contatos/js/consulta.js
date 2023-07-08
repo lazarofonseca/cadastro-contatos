@@ -45,13 +45,41 @@ const URL = "http://localhost:8080/contatos";
 
         // Coluna de Data de Nascimento
         var colDataNascimento = document.createElement('td');
-        colDataNascimento.textContent = dado.dataNascimento;
+        //colDataNascimento.textContent = dado.dataNascimento;
+        let data_nascimento = new Date(dado.dataNascimento);
+        var dia = String(data_nascimento.getDate()).padStart(2, '0');
+        var mes = String(data_nascimento.getMonth() + 1).padStart(2, '0');
+        var ano = data_nascimento.getFullYear();
+       
+        var dataFormatada = dia + '-' + mes + '-' + ano;
+        
+        colDataNascimento.textContent = dataFormatada;
         row.appendChild(colDataNascimento);
 
         // Coluna de Telefone
         var colTelefone = document.createElement('td');
         colTelefone.textContent = dado.telefone;
         row.appendChild(colTelefone);
+
+        // Coluna de Ações
+        var colAcoes = document.createElement('td');
+        var botaoEditar = document.createElement('button');
+        botaoEditar.textContent = 'Editar';
+        botaoEditar.classList.add("botao-editar");
+        botaoEditar.addEventListener('click', function() {
+            editarRegistro(dado.codigo);
+        });
+        colAcoes.appendChild(botaoEditar);
+
+        var botaoDeletar = document.createElement('button');
+        botaoDeletar.textContent = 'Deletar';
+        botaoDeletar.classList.add("botao-deletar");
+        botaoDeletar.addEventListener('click', function() {
+            deletarRegistro(dado.codigo);
+        });
+        colAcoes.appendChild(botaoDeletar);
+
+        row.appendChild(colAcoes);
 
         tbody.appendChild(row);
       }
